@@ -1,0 +1,8 @@
+ba_boedoeh_admin:
+    resource: "@BaBoedoehAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
