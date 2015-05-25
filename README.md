@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/crocLeMonde/BaBoedoeh/badge.svg)](https://coveralls.io/r/crocLeMonde/BaBoedoeh)
+
 BaBoedoeh Management
 ========================
 
