@@ -1,19 +1,19 @@
 <?php
 
-namespace BaBoedoeh\AdminBundle\Controller;
+namespace BaBoedoeh\BookingBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class HomeController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/")
      * @Template()
      */
-    public function indexAction($name)
+    public function HomeAction()
     {
-        return array('name' => $name);
+        return array();
     }
 }

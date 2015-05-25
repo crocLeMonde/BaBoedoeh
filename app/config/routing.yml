@@ -1,3 +1,8 @@
+ba_boedoeh_booking:
+    resource: "@BaBoedoehBookingBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 ba_boedoeh_admin:
     resource: "@BaBoedoehAdminBundle/Controller/"
     type:     annotation
