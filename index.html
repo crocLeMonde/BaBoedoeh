@@ -6,9 +6,29 @@
 
         <title>BaBoedoeh Booking Management System</title>
 
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="http://croclemonde.github.io/BaBoedoeh/css/main.css">
+        <link rel="stylesheet" href="http://croclemonde.github.io/BaBoedoeh/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://croclemonde.github.io/BaBoedoeh/css/prism.css">
+        <style type="text/css">
+            body { padding-top: 70px; }
+
+            #content > h1:first-child {
+                margin-top: 0px;
+            }
+
+            li.list-group-item a
+            {
+                display: block;
+            }
+
+            li.list-group-item.active a
+            {
+                color: #fff;
+            }
+
+            main {
+                margin-bottom: 50px;
+            }
+        </style>
     </head>
     <body>
 
@@ -18,22 +38,79 @@
             </a>
         </header>
 
-        <main class="container">
-            <p><a href="https://coveralls.io/r/crocLeMonde/BaBoedoeh"><img src="https://coveralls.io/repos/crocLeMonde/BaBoedoeh/badge.svg" alt="Coverage Status" /></a>
+        <main class="container-fluid">
+            <div class="row">
+
+                                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                    <div class="panel-group" role="tablist">
+                                                        <div class="panel panel-default">
+                              <div class="panel-heading" id="collapseListGroupHeading1">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#collapseListGroup1" aria-controls="collapseListGroup1">
+                                    BaBoedoeh Project
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                                <ul class="list-group">
+                                                                                                          <li class="list-group-item">
+                                        <a href="http://www.baboedoeh.com">
+                                            Our project
+                                        </a>
+                                    </li>
+                                                                                                        </ul>
+                              </div>
+                            </div>
+                                                        <div class="panel panel-default">
+                              <div class="panel-heading" id="collapseListGroupHeading2">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" href="#collapseListGroup2" aria-controls="collapseListGroup2">
+                                    Documentation
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseListGroup2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                                <ul class="list-group">
+                                                                                                          <li class="list-group-item">
+                                        <a href="Petahoushnok">
+                                            <i class="glyphicon glyphicon-user"></i> User management
+                                        </a>
+                                    </li>
+                                                                        <li class="list-group-item">
+                                        <a href="Petahoushnok">
+                                            <i class="glyphicon glyphicon-home"></i> Bungalow management
+                                        </a>
+                                    </li>
+                                                                        <li class="list-group-item">
+                                        <a href="Petahoushnok">
+                                            <i class="glyphicon glyphicon-shoe-steps"></i> Jalans around
+                                        </a>
+                                    </li>
+                                                                                                        </ul>
+                              </div>
+                            </div>
+                                                  </div>
+                    </nav>
+
+                
+                <section id="content" class="col-sm-9 col-lg-10">
+                    <p><a href="https://coveralls.io/r/crocLeMonde/BaBoedoeh"><img src="https://coveralls.io/repos/crocLeMonde/BaBoedoeh/badge.svg" alt="Coverage Status" /></a>
 <a href="https://travis-ci.org/r/crocLeMonde/BaBoedoeh"><img src="https://travis-ci.org/crocLeMonde/BaBoedoeh.svg" alt="Build Status" /></a></p>
 <h1>BaBoedoeh Management</h1>
 <p>BaBoedoeh Management is a simple and easy to handle application to manage bungalows booking on a multi user, multi languages and multi booking websites basis.</p>
+                </section>
+
+            </div>
         </main>
 
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-        <script>
-            $(function() {
-                // Little tweak for <h1>
-                $("main > h1").wrap('<div class="page-header" />');
-            });
-        </script>
-
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/prism.js"></script>
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/raphael-min.js"></script>
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/flowchart-latest.js"></script>
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/underscore-min.js"></script>
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/sequence-diagram-min.js"></script>
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://croclemonde.github.io/BaBoedoeh/js/main.js"></script>
     </body>
 </html>

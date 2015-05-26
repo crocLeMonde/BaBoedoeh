@@ -1,32 +1,119 @@
-This [Couscous](http://couscous.io) template is meant as a very simple example for you to clone and create your own.
+Kouskous
+========
 
-## Screenshot
+Kitpages's light template for http://couscous.io
 
-![](screenshot.png)
+Based on [Template Light](https://github.com/CouscousPHP/Template-Light)
 
-## Usage
+Screenshot
+----------
 
-To use the template, set it up in your `couscous.yml` configuration file:
+![](/screenshot.png)
+
+Usage
+-----
 
 ```yaml
 template:
-    url: https://github.com/CouscousPHP/Template-Basic
+    url: https://github.com/kitpages/kouskous
 ```
 
-But since it's the default template for Couscous, you actually don't need to do anything.
-
-## Configuration
+Configuration
+-------------
 
 Here are all the variables you can set in your `couscous.yml`:
 
-```yaml
+```yml
 # Base URL of the published website
 baseUrl: http://username.github.io/project
 
-# Website title
+# Title of the project
 title: My project
+
+# The left menu bar
+menu:
+    items:
+        home:
+            text: Kouskous
+            menu:
+                kitpages:
+                    text: by Kitpages
+                    absoluteUrl: http://www.kitpages.fr/
+        menu1:
+            text: Menu 1
+            menu:
+                item1:
+                    text: <i class="glyphicon glyphicon-chevron-right"></i> Item 1
+                    absoluteUrl: http://www.kitpages.fr/
+                item2:
+                    text: <i class="glyphicon glyphicon-link"></i> Item 2
+                    absoluteUrl: http://www.kitpages.fr/
+                item3:
+                    text: Item 3
+                    absoluteUrl: http://www.kitpages.fr/
 ```
 
-## Preview
 
-You can preview this template by checking out the repository and running `couscous preview`.
+Features
+--------
+
+* Minimal [twbs3](http://getbootstrap.com/) theme.
+* Syntax Highlighting with [prism](http://prismjs.com/).
+* Custom alert box with ✔, ✖ & ~
+* Draw flowcharts with [flowcharts.js](http://adrai.github.io/flowchart.js).
+* Draw sequence diagrams with [js-sequence-diagrams](http://bramp.github.io/js-sequence-diagrams/).
+* Update page title from first `h1`.
+* Auto-active menu items.
+
+Demo
+----
+
+### Syntax highlighting
+
+```php
+abstract class Bidule
+{
+    public function truc(Machin $chose)
+    {
+        array_unique($chose);
+    }
+}
+```
+
+### Custom alert box
+
+✔ Success box
+
+✖ Error box
+
+~ Warning box
+
+### Flowcharts
+
+```flowchart
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1(right)->op1
+```
+
+### Sequence diagrams
+
+```sequence
+Andrew->China: Says Hello
+Note right of China: China thinks\nabout it
+China-->Andrew: How are you?
+Andrew->>China: I am good thanks!
+```
+
+License
+-------
+
+MIT
