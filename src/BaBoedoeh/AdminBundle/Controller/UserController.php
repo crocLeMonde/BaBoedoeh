@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use BaBoedoeh\AdminBundle\Entity\User;
-use BaBoedoeh\AdminBundle\Form\UserType;
+use BaBoedoeh\AdminBundle\Form\Type\UserType;
 
 /**
  * User controller.
