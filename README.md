@@ -1,4 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/crocLeMonde/BaBoedoeh/badge.svg)](https://coveralls.io/r/crocLeMonde/BaBoedoeh)
+https://travis-ci.org/crocLeMonde/BaBoedoeh.svg
+
 
 BaBoedoeh Management
 ========================
