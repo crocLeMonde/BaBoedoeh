@@ -4,11 +4,6 @@ template:
 # Base URL of the published website
 baseUrl: http://croclemonde.github.io/BaBoedoeh
 
-# Used to link to the GitHub project
-github:
-    user: crocLeMonde
-    repo: BaBoedoeh
-
 title: BaBoedoeh Booking Management System
 subTitle: A great app to manage your bookings
 
@@ -36,3 +31,6 @@ menu:
                 item3:
                     text: <i class="glyphicon glyphicons-wrench"></i> APIs
                     absoluteUrl: petahoushnok.md
+                item3:
+                    text: <i class="glyphicon glyphicons-wrench"></i> APIs
+                    absoluteUrl: changelog.md
