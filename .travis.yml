@@ -1,9 +1,16 @@
-BaBoedoeh Management
-========================
+language: php
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - hhvm
+  - nightly
 
-BaBoedoeh Management is a simple and easy to handle application to manage bungalows booking on a multi user, multi languages and multi booking websites basis.
+before_script:
+  - composer install --dev
 
-### Change log ###
+script: phpunit --coverage-text
 
-#### V0.1 ####
-* Login system
+notifications:
+  email:
+    - etienne.lemontreer+travis@gmail.com
