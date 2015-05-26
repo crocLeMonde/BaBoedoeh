@@ -30,7 +30,7 @@
 			if(!type) type = 'picked';
 			date = dateConvert.call(this, date);
 			
-			// @todo: use jQuery UI datepicker method instead
+			// use jQuery UI datepicker method instead
 			date.setHours(0);
 			date.setMinutes(0);
 			date.setSeconds(0);
