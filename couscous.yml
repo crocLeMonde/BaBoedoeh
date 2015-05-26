@@ -1,8 +1,8 @@
 template:
-    url: https://github.com/CouscousPHP/Template-Light
+    url: https://github.com/CouscousPHP/Template-Basic
 
 # Base URL of the published website
-baseUrl: http://username.github.io/project
+baseUrl: http://croclemonde.github.io/BaBoedoeh
 
 # Used to link to the GitHub project
 github:
@@ -10,7 +10,7 @@ github:
     repo: BaBoedoeh
 
 title: BaBoedoeh Booking Management System
-subTitle: A great app to magae your bookings
+subTitle: A great app to manage your bookings
 
 # The left menu bar
 menu:
