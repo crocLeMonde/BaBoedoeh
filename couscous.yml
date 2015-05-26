@@ -25,11 +25,14 @@ menu:
             text: Documentation
             menu:
                 item1:
-                    text: <i class="glyphicon glyphicon-user"></i> User management
-                    absoluteUrl: petahoushnok
+                    text: <i class="glyphicon glyphicon-user"></i> Users
+                    absoluteUrl: petahoushnok.md
                 item2:
-                    text: <i class="glyphicon glyphicon-home"></i> Bungalow management
-                    absoluteUrl: petahoushnok
+                    text: <i class="glyphicon glyphicon-home"></i> Bungalows
+                    absoluteUrl: petahoushnok.md
                 item3:
-                    text: <i class="glyphicon glyphicons-shoe-steps"></i> Jalans around
-                    absoluteUrl: petahoushnok
+                    text: <i class="glyphicon glyphicons-search"></i> Jalans
+                    absoluteUrl: petahoushnok.md
+                item3:
+                    text: <i class="glyphicon glyphicons-wrench"></i> APIs
+                    absoluteUrl: petahoushnok.md
