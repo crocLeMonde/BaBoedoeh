@@ -1,5 +1,5 @@
 template:
-    url: https://github.com/kitpages/koukous
+    url: https://github.com/kitpages/kouskous.git
 
 # Base URL of the published website
 baseUrl: http://croclemonde.github.io/BaBoedoeh
@@ -26,10 +26,10 @@ menu:
             menu:
                 item1:
                     text: <i class="glyphicon glyphicon-user"></i> User management
-                    absoluteUrl: Petahoushnok
+                    absoluteUrl: petahoushnok
                 item2:
                     text: <i class="glyphicon glyphicon-home"></i> Bungalow management
-                    absoluteUrl: Petahoushnok
+                    absoluteUrl: petahoushnok
                 item3:
-                    text: <i class="glyphicon glyphicon-shoe-steps"></i> Jalans around
-                    absoluteUrl: Petahoushnok
+                    text: <i class="glyphicon glyphicons-shoe-steps"></i> Jalans around
+                    absoluteUrl: petahoushnok
