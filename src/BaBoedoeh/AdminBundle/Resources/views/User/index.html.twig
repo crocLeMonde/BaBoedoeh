@@ -1,42 +1,47 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    
     <div class="container">
         <!--content-->
         <div class="content" role="main">
 
-            <div class="row"><div class="col-sm-12"><div class="ribbon"><span>{{ 'User list'|trans }}</span></div></div></div>
+            <div class="row">
             
-            <table class="records_list">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for entity in entities %}
-                    <tr>
-                        <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                        <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('user_edit', { 'id': entity.id }) }}">edit</a>
-                            </li>
-                        </ul>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-
-            <a href="{{ path('user_new') }}" class="btn">
-                Create a new entry
-            </a>
+                <div class="col-sm-12">
+                    <div class="widget-container widget_login styled boxed with-ribbon">
+                    <div class="ribbon" style="position:absolute; top:10px; bottom:-33px;"><span>{{ 'User list'|trans }}</span></div>
+                    <div class="inner" style="padding-top:60px;">            
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>{{ 'Username'|trans }}</th>
+                                    <th>{{ 'First name'|trans }}</th>
+                                    <th>{{ 'Last name'|trans }}</th>
+                                    <th>{{ 'Actions'|trans }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr>
+                                    <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                                    <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.firstName }}</a></td>
+                                    <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.lastName }}</a></td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <a href="{{ path('user_show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                                <a href="{{ path('user_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <a href="{{ path('user_new') }}" class="btn"><span>Create a new entry</span></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     {% endblock %}

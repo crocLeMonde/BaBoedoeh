@@ -37,21 +37,21 @@ class User extends BaseUser
 
     public function setFirstName($firstName)
     {
-        $this->$firstName = $firstName;
+        $this->firstName = $firstName;
     }
 
     public function getFirstName()
     {
-        return $this->$firstName;
+        return $this->firstName;
     }
 
     public function setLastName($lastName)
     {
-        $this->$lastName = $lastName;
+        $this->lastName = $lastName;
     }
 
     public function getLastName()
     {
-        return $this->$lastName;
+        return $this->lastName;
     }
 }

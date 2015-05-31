@@ -11,3 +11,7 @@ div.with-ribbon .inner {
 .with-ribbon {
 	position: relative;
 }
+
+.table-striped:nth-child {
+	background-color:red;
+}
