@@ -6,19 +6,7 @@
 	{% if app.user %}
 	    Here is the Home page when connected
 	{% else %}
-	    <div class="comment-arrow"></div>
-			<div class="comment-avatar">
-				<div class="avatar"><img src="../images/pictures/etienne.jpg" alt="" /></div>
-			</div>
-			<div class="comment-text">
-				
-				<div class="comment-entry">
-					Welcome on the BaBoedoeh Booking Management !
-				</div>
-			</div>
-			<div class="clear"></div>
-
-	    <a href="{{ path('fos_user_security_login') }}" class="btn"><span>{{ 'Connection'|trans }}</span></a>
+	    ici une redirection vers le login
 	{% endif %}
 
 	</div>

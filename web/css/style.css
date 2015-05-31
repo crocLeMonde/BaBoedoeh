@@ -1,4 +1,13 @@
-.widget-container > .ribbon {
+.ribbon {
+	position: absolute;
+	left: -33px;
+	top:10px;
+}
+
+div.with-ribbon .inner {
+	padding-top: 60px;
+}
+
+.with-ribbon {
 	position: relative;
-    left : -30px;
 }

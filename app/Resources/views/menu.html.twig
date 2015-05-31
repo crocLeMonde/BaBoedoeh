@@ -1,0 +1,29 @@
+<div id="topmenu">
+	<ul class="dropdown clearfix gradient">
+	    <li class="menu-level-0"><a href="#"><span>Home</span></a></li>
+	    <li class="menu-level-0"><a href="#"><span>Administration</span></a>
+			<ul class="submenu-1">
+	            <li class="menu-level-1"><a href="{{ path('users') }}">Users</a></li>
+	            <li class="menu-level-1"><a href="#">{{ 'Groups'|trans }}</a></li>
+	            <li class="menu-level-1"><a href="#">{{ 'Bungalows'|trans }}</a></li>
+	            <li class="menu-level-1"><a href="#">{{ 'Booking websites'|trans }}</a></li>
+	        </ul>
+	    </li>
+	    <li class="menu-level-0"><a href="#"><span>{{ 'Dashboard'|trans }}</span></a></li>
+	    <li class="menu-level-0"><a href="#"><span>{{ 'Booking'|trans }}</span></a>
+	        <ul class="submenu-1">
+	            <li class="menu-level-1"><a href="#">{{ 'Guests'|trans }}</a></li>
+	            <li class="menu-level-1"><a href="#">{{ 'Bungalows'|trans }}</a></li>             
+	        </ul>
+	    </li>
+	    <li class="menu-level-0"><a href="#"><span>{{ app.user.username }}</span></a>
+	        <ul class="submenu-1">
+	            <li class="menu-level-1"><a href="{{ path('fos_user_security_logout') }}">{{ 'Se déconnecter'|trans }}</a></li>
+	                <ul class="submenu-2">
+	                    <li class="menu-level-2"><a href="#">{{ 'Gallery images'|trans }}</a></li>
+	                </ul>
+	            </li>
+	        </ul>
+	    </li>
+	</ul>
+</div>
