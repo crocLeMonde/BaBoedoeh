@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class DashboardController extends Controller
 {
     /**
-     * @Route("/dashboard")
+     * @Route("/dashboard", name="dashboard")
      * @Method("GET")
      * @Template()
      */
