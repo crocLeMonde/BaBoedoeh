@@ -1,14 +1,21 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>User creation</h1>
+<div class="content special_page" role="main">
+    <!-- row -->
+    </div>
+        <div class="col-sm-12">
+            <div class="widget-container styled boxed with-ribbon">
+                <div class="ribbon"><span>{{ 'New user'|trans }}</span></div>
+                	<div class="inner" style="padding-top:70px;">
+	                	<form method="PUT" action="{{ path('user_create') }}">
 
-    {{ form(form) }}
+	    				{{ form(form) }}
 
-        <ul class="record_actions">
+	    				</form>
     <li>
-        <a href="{{ path('user') }}">
-            Back to the list
+        <a href="{{ path('users') }}" class="btn">
+            <span>{{ 'Back to the list'|trans }}</span>
         </a>
     </li>
 </ul>

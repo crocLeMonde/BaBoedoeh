@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+
+<div class="row">
+    
+    <div class="col-sm-12">
+        <div class="widget-container styled with-ribbon">
+            <div class="ribbon" style="position: absolute; top:10px;left:-33px;"><span>Bungalow list</span></div>
+            <div class="inner" style="padding-top:60px;">
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Persons</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td><a href="{{ path('bungalow_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+                            <td>{{ entity.description }}</td>
+                            <td>{{ entity.persons }}</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('bungalow_show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                        <a href="{{ path('bungalow_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <a href="{{ path('bungalow_new') }}" class="btn right"><span>New bungalow</span></a>
+            </div>
+        </div>
+    </div>
+
+    
+
+    {% endblock %}

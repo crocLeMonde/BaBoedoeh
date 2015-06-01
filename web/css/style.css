@@ -15,3 +15,12 @@ div.with-ribbon .inner {
 .table-striped:nth-child {
 	background-color:red;
 }
+
+.right {
+	float:right;
+}
+
+.table-hover > tr:hover {
+
+background-color: red;
+}
