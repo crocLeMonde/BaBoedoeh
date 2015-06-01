@@ -20,7 +20,10 @@ div.with-ribbon .inner {
 	float:right;
 }
 
-.table-hover > tr:hover {
+.left {
+	float:left;
+}
 
-background-color: red;
+.table-hover > tr:hover {
+	background-color: red;
 }

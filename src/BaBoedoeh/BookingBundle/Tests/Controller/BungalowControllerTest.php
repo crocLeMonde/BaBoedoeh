@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BungalowControllerTest extends WebTestCase
 {
-    /*
+    
     public function testCompleteScenario()
     {
         // Create a new client to browse the application
@@ -15,19 +15,19 @@ class BungalowControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/bungalow/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /bungalow/");
-        $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
+        $crawler = $client->click($crawler->selectLink('New bungalow')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'baboedoeh_bookingbundle_bungalow[field_name]'  => 'Test',
-            // ... other fields to fill
+            'baboedoeh_bookingbundle_bungalow[name]'  => 'nameBungalow',
+            'baboedoeh_bookingbundle_bungalow[description]'  => 'descriptionBungalow',
         ));
 
         $client->submit($form);
         $crawler = $client->followRedirect();
 
         // Check data in the show view
-        $this->assertGreaterThan(0, $crawler->filter('td:contains("Test")')->count(), 'Missing element td:contains("Test")');
+        $this->assertGreaterThan(0, $crawler->filter('td:contains("nameBungalow")')->count(), 'Missing element td:contains("nameBungalow")');
 
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Edit')->link());
@@ -51,5 +51,5 @@ class BungalowControllerTest extends WebTestCase
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
     }
 
-    */
+    
 }

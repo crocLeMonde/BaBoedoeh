@@ -44,20 +44,20 @@ class BungalowController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new Bungalow();
-        $form = $this->createCreateForm($entity);
+        $bungalow = new Bungalow();
+        $form = $this->createCreateForm($bungalow);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
+            $em->persist($bungalow);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('bungalow_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('bungalow_show', array('id' => $bungalow->getId())));
         }
 
         return array(
-            'entity' => $entity,
+            'bungalow' => $bungalow,    
             'form'   => $form->createView(),
         );
     }
@@ -65,13 +65,13 @@ class BungalowController extends Controller
     /**
      * Creates a form to create a Bungalow entity.
      *
-     * @param Bungalow $entity The entity
+     * @param Bungalow $bungalow The bungalow
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Bungalow $entity)
+    private function createCreateForm(Bungalow $bungalow)
     {
-        $form = $this->createForm(new BungalowType(), $entity, array(
+        $form = $this->createForm(new BungalowType(), $bungalow, array(
             'action' => $this->generateUrl('bungalow_create'),
             'method' => 'POST',
         ));
@@ -90,11 +90,11 @@ class BungalowController extends Controller
      */
     public function newAction()
     {
-        $entity = new Bungalow();
-        $form   = $this->createCreateForm($entity);
+        $bungalow = new Bungalow();
+        $form   = $this->createCreateForm($bungalow);
 
         return array(
-            'entity' => $entity,
+            'bungalow' => $bungalow,
             'form'   => $form->createView(),
         );
     }
@@ -110,16 +110,16 @@ class BungalowController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
+        $bungalow = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Bungalow entity.');
+        if (!$bungalow) {
+            throw $this->createNotFoundException('Unable to find Bungalow bungalow.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'bungalow'      => $bungalow,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -135,17 +135,17 @@ class BungalowController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
+        $bungalow = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Bungalow entity.');
+        if (!$bungalow) {
+            throw $this->createNotFoundException('Unable to find Bungalow bungalow.');
         }
 
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($bungalow);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'bungalow'      => $bungalow,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
@@ -154,14 +154,14 @@ class BungalowController extends Controller
     /**
     * Creates a form to edit a Bungalow entity.
     *
-    * @param Bungalow $entity The entity
+    * @param Bungalow $bungalow The bungalow
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Bungalow $entity)
+    private function createEditForm(Bungalow $bungalow)
     {
-        $form = $this->createForm(new BungalowType(), $entity, array(
-            'action' => $this->generateUrl('bungalow_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new BungalowType(), $bungalow, array(
+            'action' => $this->generateUrl('bungalow_update', array('id' => $bungalow->getId())),
             'method' => 'PUT',
         ));
 
@@ -180,14 +180,14 @@ class BungalowController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
+        $bungalow = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
 
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Bungalow entity.');
+        if (!$bungalow) {
+            throw $this->createNotFoundException('Unable to find Bungalow bungalow.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($bungalow);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
@@ -197,7 +197,7 @@ class BungalowController extends Controller
         }
 
         return array(
-            'entity'      => $entity,
+            'bungalow'      => $bungalow,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
@@ -215,13 +215,13 @@ class BungalowController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
+            $bungalow = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->find($id);
 
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Bungalow entity.');
+            if (!$bungalow) {
+                throw $this->createNotFoundException('Unable to find Bungalow bungalow.');
             }
 
-            $em->remove($entity);
+            $em->remove($bungalow);
             $em->flush();
         }
 
@@ -231,7 +231,7 @@ class BungalowController extends Controller
     /**
      * Creates a form to delete a Bungalow entity by id.
      *
-     * @param mixed $id The entity id
+     * @param mixed $id The bungalow id
      *
      * @return \Symfony\Component\Form\Form The form
      */

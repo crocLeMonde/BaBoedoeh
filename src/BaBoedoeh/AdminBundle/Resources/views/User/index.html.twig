@@ -1,47 +1,42 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <div class="container">
-        <!--content-->
-        <div class="content" role="main">
-
-            <div class="row">
-            
-                <div class="col-sm-12">
-                    <div class="widget-container styled with-ribbon">
-                    <div class="ribbon" style="position:absolute; top:10px; bottom:-33px;"><span>{{ 'User list'|trans }}</span></div>
-                    <div class="inner" style="padding-top:60px;">            
-                        <table class="table table-hover table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>{{ 'Username'|trans }}</th>
-                                    <th>{{ 'First name'|trans }}</th>
-                                    <th>{{ 'Last name'|trans }}</th>
-                                    <th>{{ 'Actions'|trans }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {% for entity in entities %}
-                                <tr>
-                                    <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
-                                    <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.firstName }}</a></td>
-                                    <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.lastName }}</a></td>
-                                    <td>
-                                        <ul>
-                                            <li>
-                                                <a href="{{ path('user_show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
-                                                <a href="{{ path('user_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                        <a href="{{ path('user_new') }}" class="btn"><span>New user</span></a>
-                    </div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="widget-container styled with-ribbon">
+            <div class="ribbon"><span>User list</span></div>
+            <div class="inner">
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                            <th>{{ 'Username'|trans }}</th>
+                            <th>{{ 'First name'|trans }}</th>
+                            <th>{{ 'Last name'|trans }}</th>
+                            <th>{{ 'Actions'|trans }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                            <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.firstName }}</a></td>
+                            <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.lastName }}</a></td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('user_show', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                        <a href="{{ path('user_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                    <a href="{{ path('user_new') }}" class="btn right"><span>New user</span></a>
+                    <div style="clear:both"></div>
                 </div>
             </div>
         </div>
     </div>
-    {% endblock %}
+{% endblock %}

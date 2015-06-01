@@ -7,16 +7,14 @@
         <div class="col-sm-12">
             <div class="widget-container styled boxed with-ribbon">
                 <div class="ribbon"><span>{{ 'New user'|trans }}</span></div>
-                	<div class="inner" style="padding-top:70px;">
+                	<div class="inner">
 	                	<form method="PUT" action="{{ path('user_create') }}">
 
 	    				{{ form(form) }}
 
 	    				</form>
-    <li>
+
         <a href="{{ path('users') }}" class="btn">
             <span>{{ 'Back to the list'|trans }}</span>
         </a>
-    </li>
-</ul>
 {% endblock %}
