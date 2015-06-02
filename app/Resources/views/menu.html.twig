@@ -16,6 +16,15 @@
 	            <li class="menu-level-1"><a href="#">{{ 'Bungalows'|trans }}</a></li>             
 	        </ul>
 	    </li>
+	    <li class="menu-level-0"><a href="#"><span>{{ 'Tours'|trans }}</span></a>
+	        <ul class="submenu-1">
+                <li class="menu-level-1"><a href="#">{{ 'Tour 1'|trans }}</a></li>
+                <li class="menu-level-1"><a href="#">{{ 'Tour 2'|trans }}</a></li>
+                {% if is_granted("ROLE_ADMIN") %}
+                <li class="menu-level-1"><a href="#">{{ 'New Tour'|trans }}</a></li>
+                {% endif %}
+            </ul>
+	    </li>
 	    <li class="menu-level-0"><a href="#"><span>{{ app.user.username }}</span></a>
 	        <ul class="submenu-1">
 	            <li class="menu-level-1"><a href="{{ path('fos_user_security_logout') }}">{{ 'Se déconnecter'|trans }}</a></li>

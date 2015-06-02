@@ -1,6 +1,31 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
+
+
+<script>
+    jQuery(document).ready(function($) {
+
+        $('#carouFredsel-2').carouFredSel({
+            next : "#carousel-next-2",
+            prev : "#carousel-prev-2",
+            auto: false,
+            scroll: {items : 1}
+        });
+
+    $(window).resize(function() {
+
+        $('#carouFredsel-2').carouFredSel({
+            next : "#carousel-next-2",
+            prev : "#carousel-prev-2",
+            auto: false,
+            scroll: {items : 1}
+        });
+
+    })
+    });
+</script>
+
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-1">
 
@@ -27,6 +52,43 @@
             </ol>
         </div>
 	</div>
+
+    <div class="col-sm-12 col-md-8">
+        <!-- Carousel -->
+        <div class="carouFredsel style2">
+            <div class="inner">
+                <ul id="carouFredsel-2">
+                    <li>
+                        <div class="carousel-title"><p>A dreamland beach</p></div>
+                        <div class="carousel-image"><a href="{{ asset('images/pictures/crazyView.jpg') }}') }}" data-rel="prettyPhoto" title="Brave"><img src="{{ asset('images/pictures/crazyView.jpg') }}" alt="" /></a></div>
+                    </li>
+                    <li>
+                        <div class="carousel-title"><p>Anick during a ceremony</p></div>
+                        <div class="carousel-image"><a href="{{ asset('images/pictures/anick.jpg') }}" data-rel="prettyPhoto" title="Surf up"><img src="{{ asset('images/pictures/anick.jpg') }}" alt="" /></a></div>
+                    </li>
+                    <li>
+                        <div class="carousel-title"><p>Rina during a ceremony</p></div>
+                        <div class="carousel-image"><a href="{{ asset('images/pictures/rina.jpg') }}" data-rel="prettyPhoto" title="Wall-e"><img src="{{ asset('images/pictures/rina.jpg') }}" alt="" /></a></div>
+                    </li>
+                    <li>
+                        <div class="carousel-title"><p></p></div>
+                        <div class="carousel-image"><a href="{{ asset('images/pictures/group.jpg') }}" data-rel="prettyPhoto" title="Brave"><img src="{{ asset('images/pictures/group') }}" alt="" /></a></div>
+                    </li>
+                    <li>
+                        <div class="carousel-title"><p></p></div>
+                        <div class="carousel-image"><a href="{{ asset('images/pictures/tirta.jpg') }}" data-rel="prettyPhoto" title="Brave"><img src="{{ asset('images/pictures/tirta.jpg') }}" alt="" /></a></div>
+                    </li>
+                    <li>
+                        <div class="carousel-title"><p></p></div>
+                        <div class="carousel-image"><a href="{{ asset('images/pictures/riceField.jpg') }}" data-rel="prettyPhoto" title="Surf up"><img src="{{ asset('images/pictures/riceField.jpg') }}" alt="" /></a></div>
+                    </li>
+                </ul>
+                <a id="carousel-prev-2" class="prev" href="#">prev</a>
+                <a id="carousel-next-2" class="next" href="#">next</a>
+            </div>
+        </div>
+        <!--/ Carousel -->
+    </div>
 </div>
 
 {% endblock %}
