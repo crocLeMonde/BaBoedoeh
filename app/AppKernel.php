@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new BaBoedoeh\AdminBundle\BaBoedoehAdminBundle(),
             new BaBoedoeh\BookingBundle\BaBoedoehBookingBundle(),
+            new BaBoedoeh\AirbnbBundle\BaBoedoehAirbnbBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
