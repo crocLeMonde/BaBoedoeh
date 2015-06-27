@@ -2,6 +2,9 @@
 
 namespace BaBoedoeh\AirbnbBundle\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\DomCrawler\Crawler;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -9,11 +12,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/availability/{id}", requirements={"id" = "\d+"})
      * @Template()
      */
-    public function indexAction($name)
+    public function availabilityAction($id)
     {
-        return array('name' => $name);
+    	$wtc = new WebTestCase;
+		$client = $wtc::createClient();
+
+        $crawler = $client->request('GET', 'https://www.airbnb.fr/rooms/'.$id);
+
+        $crawler = $crawler->filter('body');
+
+
+        return array('id' => $id);
     }
 }
