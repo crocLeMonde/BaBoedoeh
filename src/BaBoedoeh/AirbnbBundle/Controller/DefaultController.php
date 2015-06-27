@@ -17,14 +17,5 @@ class DefaultController extends Controller
      */
     public function availabilityAction($id)
     {
-    	$wtc = new WebTestCase;
-		$client = $wtc::createClient();
-
-        $crawler = $client->request('GET', 'https://www.airbnb.fr/rooms/'.$id);
-
-        $crawler = $crawler->filter('body');
-
-
-        return array('id' => $id);
     }
 }
