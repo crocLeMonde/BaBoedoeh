@@ -2,13 +2,13 @@
 
 namespace BaBoedoeh\BookingBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use BaBoedoeh\BookingBundle\Entity\Bungalow;
+use BaBoedoeh\BookingBundle\Form\BungalowType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use BaBoedoeh\BookingBundle\Entity\Bungalow;
-use BaBoedoeh\BookingBundle\Form\BungalowType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Bungalow controller.
@@ -17,7 +17,6 @@ use BaBoedoeh\BookingBundle\Form\BungalowType;
  */
 class BungalowController extends Controller
 {
-
     /**
      * Lists all Bungalow entities.
      *
@@ -31,10 +30,11 @@ class BungalowController extends Controller
 
         $entities = $em->getRepository('BaBoedoehBookingBundle:Bungalow')->findAll();
 
-        return array(
+        return [
             'entities' => $entities,
-        );
+        ];
     }
+
     /**
      * Creates a new Bungalow entity.
      *
@@ -53,13 +53,13 @@ class BungalowController extends Controller
             $em->persist($bungalow);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('bungalow_show', array('id' => $bungalow->getId())));
+            return $this->redirect($this->generateUrl('bungalow_show', ['id' => $bungalow->getId()]));
         }
 
-        return array(
-            'bungalow' => $bungalow,    
-            'form'   => $form->createView(),
-        );
+        return [
+            'bungalow' => $bungalow,
+            'form'     => $form->createView(),
+        ];
     }
 
     /**
@@ -71,12 +71,12 @@ class BungalowController extends Controller
      */
     private function createCreateForm(Bungalow $bungalow)
     {
-        $form = $this->createForm(new BungalowType(), $bungalow, array(
+        $form = $this->createForm(new BungalowType(), $bungalow, [
             'action' => $this->generateUrl('bungalow_create'),
             'method' => 'POST',
-        ));
+        ]);
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', ['label' => 'Create']);
 
         return $form;
     }
@@ -91,12 +91,12 @@ class BungalowController extends Controller
     public function newAction()
     {
         $bungalow = new Bungalow();
-        $form   = $this->createCreateForm($bungalow);
+        $form = $this->createCreateForm($bungalow);
 
-        return array(
+        return [
             'bungalow' => $bungalow,
-            'form'   => $form->createView(),
-        );
+            'form'     => $form->createView(),
+        ];
     }
 
     /**
@@ -118,10 +118,10 @@ class BungalowController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return [
             'bungalow'      => $bungalow,
-            'delete_form' => $deleteForm->createView(),
-        );
+            'delete_form'   => $deleteForm->createView(),
+        ];
     }
 
     /**
@@ -144,31 +144,32 @@ class BungalowController extends Controller
         $editForm = $this->createEditForm($bungalow);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return [
             'bungalow'      => $bungalow,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+            'edit_form'     => $editForm->createView(),
+            'delete_form'   => $deleteForm->createView(),
+        ];
     }
 
     /**
-    * Creates a form to edit a Bungalow entity.
-    *
-    * @param Bungalow $bungalow The bungalow
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Bungalow entity.
+     *
+     * @param Bungalow $bungalow The bungalow
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Bungalow $bungalow)
     {
-        $form = $this->createForm(new BungalowType(), $bungalow, array(
-            'action' => $this->generateUrl('bungalow_update', array('id' => $bungalow->getId())),
+        $form = $this->createForm(new BungalowType(), $bungalow, [
+            'action' => $this->generateUrl('bungalow_update', ['id' => $bungalow->getId()]),
             'method' => 'PUT',
-        ));
+        ]);
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', ['label' => 'Update']);
 
         return $form;
     }
+
     /**
      * Edits an existing Bungalow entity.
      *
@@ -193,15 +194,16 @@ class BungalowController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('bungalow_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('bungalow_edit', ['id' => $id]));
         }
 
-        return array(
+        return [
             'bungalow'      => $bungalow,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        );
+            'edit_form'     => $editForm->createView(),
+            'delete_form'   => $deleteForm->createView(),
+        ];
     }
+
     /**
      * Deletes a Bungalow entity.
      *
@@ -238,10 +240,9 @@ class BungalowController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('bungalow_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('bungalow_delete', ['id' => $id]))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+            ->add('submit', 'submit', ['label' => 'Delete'])
+            ->getForm();
     }
 }
