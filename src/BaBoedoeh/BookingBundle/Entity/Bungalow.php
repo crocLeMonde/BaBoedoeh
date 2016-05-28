@@ -5,7 +5,7 @@ namespace BaBoedoeh\BookingBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Bungalow
+ * Bungalow.
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="BaBoedoeh\BookingBundle\Entity\BungalowRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Bungalow
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -36,17 +36,16 @@ class Bungalow
     private $description;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="persons", type="integer")
      */
     private $persons;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -54,7 +53,7 @@ class Bungalow
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -68,7 +67,7 @@ class Bungalow
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -78,7 +77,7 @@ class Bungalow
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -92,7 +91,7 @@ class Bungalow
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -102,9 +101,9 @@ class Bungalow
     }
 
     /**
-     * Set persons
+     * Set persons.
      *
-     * @param integer $persons
+     * @param int $persons
      *
      * @return Bungalow
      */
@@ -116,13 +115,12 @@ class Bungalow
     }
 
     /**
-     * Get persons
+     * Get persons.
      *
-     * @return integer
+     * @return int
      */
     public function getPersons()
     {
         return $this->persons;
     }
 }
-

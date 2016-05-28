@@ -2,8 +2,8 @@
 
 namespace BaBoedoeh\AdminBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity
@@ -18,16 +18,9 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-    *
-    */
     protected $firstName;
 
-    /**
-    *
-    */
     protected $lastName;
-
 
     public function __construct()
     {

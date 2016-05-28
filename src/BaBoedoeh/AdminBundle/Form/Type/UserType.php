@@ -8,18 +8,16 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserType extends AbstractType
 {
-
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('username')
             ->add('firstName')
-            ->add('lastName')
-        ;
+            ->add('lastName');
     }
 
     /**
@@ -27,9 +25,9 @@ class UserType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'BaBoedoeh\AdminBundle\Entity\User'
-        ));
+        $resolver->setDefaults([
+            'data_class' => 'BaBoedoeh\AdminBundle\Entity\User',
+        ]);
     }
 
     /**
